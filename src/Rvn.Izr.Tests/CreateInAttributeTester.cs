@@ -21,5 +21,15 @@ namespace Rvn.Izr.Tests
 			Assert.That(() => new CreateInAttribute(empty), Throws.ArgumentException.With
 				.Message.StringContaining("empty"));
 		}
+
+		[Test]
+		public void Equals_CaseInsensitive()
+		{
+			Assert.That(new CreateInAttribute("My_Db"), Is
+				.EqualTo("My_Db").And
+				.EqualTo("my_db").And
+				.EqualTo("MY_DB").And
+				.Not.EqualTo("my-db"));
+		}
     }
 }
