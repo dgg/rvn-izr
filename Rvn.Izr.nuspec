@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<!--owners>$author$</owners-->
+		<licenseUrl>http://www.opensource.org/licenses/bsd-license.php</licenseUrl>
+		<projectUrl>https://github.com/dgg/rvn-izr</projectUrl>
+		<iconUrl>http://static.ravendb.net/logo-for-nuget.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<summary>
+			rvn-izr is a set of utilities, better practices and patterns that I found useful when working with RavenDB.
+		</summary>
+		<!--releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+		<copyright>Copyright 2015</copyright-->
+		<tags>raven ravendb document database</tags>
+		<dependencies>
+			<dependency id="RavenDB.Client" version="2.5.2666" />
+		</dependencies>
+	</metadata>
+</package>

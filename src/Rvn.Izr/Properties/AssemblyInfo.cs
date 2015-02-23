@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Rvn.Izr")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("Using RavenDB My Way")]
+[assembly: AssemblyDescription("Using RavenDB My Way")]
+[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Daniel González García")]
 [assembly: AssemblyProduct("rvn-izr")]
 [assembly: AssemblyCopyright("")]
