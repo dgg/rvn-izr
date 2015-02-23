@@ -7,8 +7,8 @@
     <ProjectGuid>{9AE005DA-0E79-4F9A-B68D-E4D6E8E23F62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>rvn_izr</RootNamespace>
-    <AssemblyName>rvn-izr</AssemblyName>
+    <RootNamespace>Rvn.Izr</RootNamespace>
+    <AssemblyName>Rvn.Izr</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,6 +46,7 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateInAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
