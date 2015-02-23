@@ -7,8 +7,8 @@ namespace Rvn.Izr
 	{
 		public CreateInAttribute(string database)
 		{
-			if (database == null) throw new ArgumentNullException("database", "Databse cannot be null");
-			if (string.IsNullOrWhiteSpace(database)) throw new ArgumentException("Database cannot be empty");
+			if (database == null) throw new ArgumentNullException("database", "Database cannot be null");
+			if (string.IsNullOrWhiteSpace(database)) throw new ArgumentException("Database cannot be empty", "database");
 
 			Database = database;
 		}
@@ -23,6 +23,11 @@ namespace Rvn.Izr
 		public override string ToString()
 		{
 			return Database;
+		}
+
+		internal static CreateInAttribute Get(Type type)
+		{
+			return (CreateInAttribute) GetCustomAttribute(type, typeof (CreateInAttribute), true);
 		}
 	}
 }
