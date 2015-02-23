@@ -3,7 +3,7 @@
 namespace Rvn.Izr
 {
 	[AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
-	internal sealed class CreateInAttribute : Attribute, IEquatable<string>
+	public sealed class CreateInAttribute : Attribute, IEquatable<string>
 	{
 		public CreateInAttribute(string database)
 		{
