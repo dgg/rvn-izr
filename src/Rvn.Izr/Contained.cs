@@ -15,7 +15,6 @@ namespace Rvn.Izr
 			_pairs = pairs;
 		}
 
-
 		public ExportProvider For(string database)
 		{
 			var indexes = _pairs.Where(a => a.Item2.Equals(database))
