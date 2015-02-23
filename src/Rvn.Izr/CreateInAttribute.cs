@@ -3,7 +3,7 @@
 namespace Rvn.Izr
 {
 	[AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
-	internal sealed class CreateInAttribute : Attribute
+	internal sealed class CreateInAttribute : Attribute, IEquatable<string>
 	{
 		public CreateInAttribute(string database)
 		{
@@ -14,6 +14,11 @@ namespace Rvn.Izr
 		}
 
 		public string Database { get; private set; }
+
+		public bool Equals(string other)
+		{
+			return StringComparer.OrdinalIgnoreCase.Equals(Database, other);
+		}
 
 		public override string ToString()
 		{
