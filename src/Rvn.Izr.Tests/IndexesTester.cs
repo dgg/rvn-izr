@@ -12,7 +12,7 @@ namespace Rvn.Izr.Tests
 	public class IndexesTester
 	{
 		[Test]
-		public void Builder_MyDb_ReturnsDecoratedIndexesForThatDatabase()
+		public void For_MyDb_ReturnsDecoratedIndexesForThatDatabase()
 		{
 			ExportProvider export = Indexes.ContainedBesides(typeof (IndexesTester))
 				.For("my_db");
@@ -24,6 +24,15 @@ namespace Rvn.Izr.Tests
 				.Exactly(1).Matches(Is.InstanceOf<Decorated_MyDb>()).And
 				.None.Matches(Is.InstanceOf<NotDecorated>()).And
 				.None.Matches(Is.InstanceOf<Decorated_YourDb>()));
+		}
+
+		[Test]
+		public void Select_MyDb_ReturnsDecoratedIndexesForThatDatabase()
+		{
+			var myDbIndexes = Indexes.ContainedBesides(typeof(IndexesTester))
+				.Select("my_db");
+
+			Assert.That(myDbIndexes, Is.EquivalentTo(new []{typeof(Decorated_MyDb)}));
 		}
 
 		[Test, Category("usage"), Ignore]

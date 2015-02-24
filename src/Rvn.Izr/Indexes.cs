@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Reflection;
@@ -11,6 +12,7 @@ namespace Rvn.Izr
 		public interface IContained
 		{
 			ExportProvider For(string database);
+			IEnumerable<Type> Select(string database);
 		}
 
 		public static IContained ContainedBesides(params Type[] types)

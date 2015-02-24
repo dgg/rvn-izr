@@ -17,11 +17,16 @@ namespace Rvn.Izr
 
 		public ExportProvider For(string database)
 		{
+			ComposablePartCatalog catalog = new TypeCatalog(Select(database));
+			return new CompositionContainer(catalog);
+		}
+
+		public IEnumerable<Type> Select(string database)
+		{
 			var indexes = _pairs.Where(a => a.Item2.Equals(database))
 				.Select(a => a.Item1);
 
-			ComposablePartCatalog catalog = new TypeCatalog(indexes);
-			return new CompositionContainer(catalog);
+			return indexes;
 		}
 	}
 }

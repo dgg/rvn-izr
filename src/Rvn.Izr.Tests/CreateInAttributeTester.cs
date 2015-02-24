@@ -4,8 +4,8 @@ using NUnit.Framework;
 namespace Rvn.Izr.Tests
 {
 	[TestFixture]
-    public class CreateInAttributeTester
-    {
+	public class CreateInAttributeTester
+	{
 		[Test]
 		public void Ctor_NullDatabase_Exception()
 		{
@@ -31,5 +31,5 @@ namespace Rvn.Izr.Tests
 				.EqualTo("MY_DB").And
 				.Not.EqualTo("my-db"));
 		}
-    }
+	}
 }
