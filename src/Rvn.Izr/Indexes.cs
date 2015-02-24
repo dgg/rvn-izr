@@ -13,6 +13,7 @@ namespace Rvn.Izr
 		{
 			ExportProvider For(string database);
 			IEnumerable<Type> Select(string database);
+			Type[] NotDecorated();
 		}
 
 		public static IContained ContainedBesides(params Type[] types)
@@ -24,8 +25,7 @@ namespace Rvn.Izr
 		{
 			var types = assemblies.SelectMany(a => a.GetTypes())
 				.Where(t => typeof(AbstractIndexCreationTask).IsAssignableFrom(t))
-				.Select(t => Tuple.Create(t, CreateInAttribute.Get(t)))
-				.Where(a => a.Item2 != null);
+				.Select(t => Tuple.Create(t, CreateInAttribute.Get(t)));
 
 			return new Contained(types);
 		}

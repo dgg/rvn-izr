@@ -35,6 +35,15 @@ namespace Rvn.Izr.Tests
 			Assert.That(myDbIndexes, Is.EquivalentTo(new []{typeof(Decorated_MyDb)}));
 		}
 
+		[Test]
+		public void NotDecorated_ReturnsNotDecoratedIndexes()
+		{
+			var notDecorated = Indexes.ContainedBesides(typeof (IndexesTester))
+				.NotDecorated();
+
+			Assert.That(notDecorated, Is.EquivalentTo(new[]{typeof(NotDecorated)}));
+		}
+
 		[Test, Category("usage"), Ignore]
 		public void IndexesBuilder()
 		{
@@ -49,6 +58,16 @@ namespace Rvn.Izr.Tests
 				.For(aDatabase);
 
 			IndexCreation.CreateIndexes(export, initializedStore);
+		}
+
+		[Test, Category("usage"), Ignore]
+		public void DecoratedIndexesTester()
+		{
+			
+			var notDecoratedIndexes = Indexes.ContainedBesides(typeof(IndexesTester))
+				.NotDecorated();
+
+			Assert.That(notDecoratedIndexes, Is.Empty);
 		}
 	}
 }

@@ -23,10 +23,22 @@ namespace Rvn.Izr
 
 		public IEnumerable<Type> Select(string database)
 		{
-			var indexes = _pairs.Where(a => a.Item2.Equals(database))
+			IEnumerable<Type> decoratedIndexes = _pairs
+				.Where(a => a.Item2 != null)
+				.Where(a => a.Item2.Equals(database))
 				.Select(a => a.Item1);
 
-			return indexes;
+			return decoratedIndexes;
+		}
+
+		public Type[] NotDecorated()
+		{
+			Type[] notDecoratedIndexes = _pairs
+				.Where(a => a.Item2 == null)
+				.Select(a => a.Item1)
+				.ToArray();
+
+			return notDecoratedIndexes;
 		}
 	}
 }
