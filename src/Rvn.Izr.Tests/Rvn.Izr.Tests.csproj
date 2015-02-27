@@ -48,6 +48,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\DbSessionAdapterTester.cs" />
+    <Compile Include="Adapters\Support\ImportedCode.cs" />
     <Compile Include="CreateInAttributeTester.cs" />
     <Compile Include="IndexesTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
