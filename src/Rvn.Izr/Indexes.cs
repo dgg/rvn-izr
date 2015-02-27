@@ -24,7 +24,8 @@ namespace Rvn.Izr
 		public static IContained ContainedIn(params Assembly[] assemblies)
 		{
 			var types = assemblies.SelectMany(a => a.GetTypes())
-				.Where(t => typeof(AbstractIndexCreationTask).IsAssignableFrom(t))
+				.Where(t => typeof(AbstractIndexCreationTask).IsAssignableFrom(t) ||
+					typeof(AbstractTransformerCreationTask).IsAssignableFrom(t))
 				.Select(t => Tuple.Create(t, CreateInAttribute.Get(t)));
 
 			return new Contained(types);

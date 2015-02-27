@@ -21,4 +21,8 @@
 			<dependency id="RavenDB.Client" version="2.5.2666" />
 		</dependencies>
 	</metadata>
+	<files>
+		<file src="Adapters\*.*" target="content\Infrastructure\Data\Adapters" />
+		<file src="readme.txt" target="" />
+	</files>
 </package>
